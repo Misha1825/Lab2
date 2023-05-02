@@ -57,23 +57,30 @@ struct Pair {
 	int first, second;
 };
 std::vector<Pair> pairs(std::string A) {
-    std::vector<Pair> V;
+	std::vector<Pair> V;
+	int count = 0;
     for(int i = 0; i < A.size(); ++i) {
 		if(A[i] == '(') {
-            stack.push(i);
+			stack.push(i);
+			count++;
         }
         if(A[i] == ')') {
             Pair P;
             P.first = stack.top();
             stack.pop();
             P.second = i;
-            V.push_back(P);
+			V.push_back(P);
+			count--;
         }
-    }
-    return V;
+	}
+
+	if(count != 0) {
+		ShowMessage ("Скобка не закрыта");
+	}
+	return V;
 };
 float calculate(std::string A) {
-    using namespace std;
+	using namespace std;
     string B;
 	int a = 0, b = 1, c, d = 0, f = 0, g;
 	while (A[a]) {
