@@ -39,6 +39,7 @@ __published:
 	TButton *Button18;
 	TButton *Button19;
 	TButton *Button20;
+	TButton *Button21;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 private:

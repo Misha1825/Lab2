@@ -48,7 +48,19 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 	if(Sender == Button17) Form1->Edit1->Text += "/"; else
 	if(Sender == Button18) Form1->Edit1->Text += "."; else
 	if(Sender == Button19) Form1->Edit1->Text += "("; else
-	if(Sender == Button20) Form1->Edit1->Text += ")";
+	if(Sender == Button20) Form1->Edit1->Text += ")"; else
+		if(Sender == Button21) {
+		AnsiString S = Form1->Edit1->Text;
+		int binary = StrToInt(S);
+
+		std::string A;
+		A = std::bitset<sizeof(int)*8>(binary).to_string();
+		int i = 0;
+		while(A[0] != '1') {
+			A.replace(0,1, "");
+		}
+		Form1->Edit2->Text = A.c_str();
+	}
 }
 //---------------------------------------------------------------------------
 

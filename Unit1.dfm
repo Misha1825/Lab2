@@ -209,4 +209,13 @@ object Form1: TForm1
     TabOrder = 21
     OnClick = Button2Click
   end
+  object Button21: TButton
+    Left = 259
+    Top = 78
+    Width = 75
+    Height = 42
+    Caption = 'Bin'
+    TabOrder = 22
+    OnClick = Button2Click
+  end
 end
